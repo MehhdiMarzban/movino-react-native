@@ -7,7 +7,7 @@ import { useNativeWindColorScheme } from "@/hooks/useNativeWindColorScheme";
 export default function HomeScreen() {
     const {toggleColorScheme} = useNativeWindColorScheme();
     return (
-        <View className="flex-1 gap-4">
+        <View className="flex-1 gap-4 bg-background">
             <View className="bg-primary py-4">
                 <Text className="text-center text-2xl text-primary-foreground">موینو برنامه ای برای فیلم ها</Text>
             </View>

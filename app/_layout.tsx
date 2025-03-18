@@ -6,6 +6,8 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState } from "react";
 import "react-native-reanimated";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import * as NavigationBar from 'expo-navigation-bar';
+
 
 import "@/global.css";
 import { useNativeWindColorScheme } from "@/hooks/useNativeWindColorScheme";
@@ -24,13 +26,18 @@ const DARK_THEME: Theme = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-    const { colorScheme, isDarkColorScheme } = useNativeWindColorScheme();
+    const { isDarkColorScheme } = useNativeWindColorScheme();
     const [loaded] = useFonts({
         SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
     });
 
     const hasMounted = useRef(false);
     const [isColorSchemeLoaded, setIsColorSchemeLoaded] = useState(false);
+
+    //* change navigation bar color
+    useEffect(() => {
+        NavigationBar.setBackgroundColorAsync(isDarkColorScheme ? DARK_THEME.colors.background : LIGHT_THEME.colors.background);
+    }, [isDarkColorScheme])
 
     //* color scheme loaded
     useEffect(() => {
@@ -55,12 +62,19 @@ export default function RootLayout() {
     return (
         <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
             <SafeAreaProvider>
-                <SafeAreaView className="flex-1">
+                <SafeAreaView className="flex-1 bg-background">
                     <Stack>
                         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
                         <Stack.Screen name="+not-found" />
                     </Stack>
-                    <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
+                    <StatusBar
+                        backgroundColor={
+                            isDarkColorScheme
+                                ? DARK_THEME.colors.primary
+                                : LIGHT_THEME.colors.primary
+                        }
+                        style={isDarkColorScheme ? "light" : "dark"}
+                    />
                 </SafeAreaView>
             </SafeAreaProvider>
         </ThemeProvider>
