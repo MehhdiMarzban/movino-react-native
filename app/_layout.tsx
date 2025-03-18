@@ -6,8 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import { useEffect, useRef, useState } from "react";
 import "react-native-reanimated";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import * as NavigationBar from 'expo-navigation-bar';
-
+import * as NavigationBar from "expo-navigation-bar";
 
 import "@/global.css";
 import { useNativeWindColorScheme } from "@/hooks/useNativeWindColorScheme";
@@ -28,7 +27,9 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
     const { isDarkColorScheme } = useNativeWindColorScheme();
     const [loaded] = useFonts({
-        SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+        "peyda-medium": require("../assets/fonts/Peyda-Medium.ttf"),
+        "peyda-thin": require("../assets/fonts/Peyda-Thin.ttf"),
+        "peyda-bold": require("../assets/fonts/Peyda-Bold.ttf"),
     });
 
     const hasMounted = useRef(false);
@@ -36,8 +37,10 @@ export default function RootLayout() {
 
     //* change navigation bar color
     useEffect(() => {
-        NavigationBar.setBackgroundColorAsync(isDarkColorScheme ? DARK_THEME.colors.background : LIGHT_THEME.colors.background);
-    }, [isDarkColorScheme])
+        NavigationBar.setBackgroundColorAsync(
+            isDarkColorScheme ? DARK_THEME.colors.background : LIGHT_THEME.colors.background
+        );
+    }, [isDarkColorScheme]);
 
     //* color scheme loaded
     useEffect(() => {

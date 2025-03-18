@@ -12,7 +12,7 @@ export default function HomeScreen() {
                 <Text className="text-center text-2xl text-primary-foreground">موینو برنامه ای برای فیلم ها</Text>
             </View>
             <View className="px-2">
-                <Text className="text-foreground text-right font-bold text-xl">سلام مهدی</Text>
+                <Text className="text-foreground text-right font-peyda-bold text-xl"> سلام مهدی احوال شریف چطوره</Text>
                 <Button variant="default" size="lg" onPress={() => toggleColorScheme()}>
                     <Text>افزودن</Text>
                 </Button>
