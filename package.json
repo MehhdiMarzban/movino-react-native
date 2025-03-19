@@ -6,6 +6,7 @@
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
+    "build:apk": "eas build --profile production --platform android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
