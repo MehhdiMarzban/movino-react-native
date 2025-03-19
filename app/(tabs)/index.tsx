@@ -13,11 +13,8 @@ export default function HomeScreen() {
                     موینو برنامه ای برای فیلم ها
                 </Text>
             </View>
-            <View className="px-2">
-                <Text className="text-foreground font-peyda-bold text-xl">
-                    {" "}
-                    سلام مهدی احوال شریف چطوره
-                </Text>
+            <View className="px-2 gap-4">
+                <Text className="text-foreground font-peyda-bold text-xl"> موش بخورت </Text>
                 <View className="flex flex-row gap-2">
                     <Button
                         className="flex-1"
