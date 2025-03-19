@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "movies-app",
-    "slug": "movies-app",
+    "name": "movino",
+    "slug": "movino",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,7 +9,11 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "ExpoLocalization_supportsRTL": true,
+        "ExpoLocalization_forcesRTL": true
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,6 +27,19 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "supportsRTL": true,
+      "forcesRTL": true,
+      "eas": {
+        "projectId": "5d1e6f0f-db13-4dd6-a7bd-2e0432e28cce"
+      }
+    },
     "plugins": [
       "expo-router",
       [
@@ -33,18 +50,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "6415846a-379f-4122-8c93-cd144f9c088a"
-      }
-    }
+      ],
+      "expo-localization"
+    ]
   }
 }

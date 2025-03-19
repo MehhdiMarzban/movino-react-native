@@ -1,8 +1,9 @@
+import { I18nManager } from "react-native";
+import { useEffect, useRef, useState } from "react";
 import { DarkTheme, DefaultTheme, Theme, ThemeProvider } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect, useRef, useState } from "react";
 import "react-native-reanimated";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as NavigationBar from "expo-navigation-bar";
@@ -22,6 +23,10 @@ const DARK_THEME: Theme = {
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
+
+//* change direction to RTL
+I18nManager.allowRTL(true);
+I18nManager.forceRTL(true);
 
 /**
  * A wrapper component that wraps the root of the app with the necessary
