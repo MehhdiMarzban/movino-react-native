@@ -8,7 +8,7 @@ import "react-native-reanimated";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as NavigationBar from "expo-navigation-bar";
 
-import "@/global.css";
+import "@/styles/global.css";
 import { useNativeWindColorScheme } from "@/hooks/useNativeWindColorScheme";
 import { NAV_THEME } from "@/constants/ThemeColors";
 
