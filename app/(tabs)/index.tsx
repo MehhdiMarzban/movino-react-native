@@ -1,17 +1,17 @@
 import { View } from "react-native";
 
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
 import { useNativeWindColorScheme } from "@/hooks/useNativeWindColorScheme";
+import { ThemeToggle, Button, Text } from "@/components/ui";
 
 export default function HomeScreen() {
     const { toggleColorScheme } = useNativeWindColorScheme();
     return (
         <View className="flex-1 gap-4 bg-background">
-            <View className="bg-primary py-4">
+            <View className="flex flex-row justify-between bg-primary p-4">
                 <Text className="text-center text-2xl text-primary-foreground">
                     موینو برنامه ای برای فیلم ها
                 </Text>
+                <ThemeToggle />
             </View>
             <View className="px-2 gap-4">
                 <Text className="text-foreground font-peyda-bold text-xl"> موش بخورت</Text>
