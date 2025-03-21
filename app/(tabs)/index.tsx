@@ -14,7 +14,7 @@ export default function HomeScreen() {
                 </Text>
             </View>
             <View className="px-2 gap-4">
-                <Text className="text-foreground font-peyda-bold text-xl"> موش بخورت </Text>
+                <Text className="text-foreground font-peyda-bold text-xl"> موش بخورت</Text>
                 <View className="flex flex-row gap-2">
                     <Button
                         className="flex-1"
